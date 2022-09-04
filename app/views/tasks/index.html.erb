@@ -1,0 +1,5 @@
+<h3>Hello <%= current_user %>!</h3>
+
+<% @tasks.each do |task| %>
+  <h3><%= task.name %></h3>
+<% end %>
