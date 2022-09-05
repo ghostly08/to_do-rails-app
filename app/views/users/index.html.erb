@@ -5,6 +5,7 @@
         <%= link_to user_path(user) do %>
           <h3><%= user.name %></h3>
         <% end %>
+        <h5><%= user.tasks.count %></h5>
       <% end %>
     </div>
   </div>
