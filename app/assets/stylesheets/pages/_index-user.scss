@@ -1,0 +1,30 @@
+.main-container {
+  position: absolute;
+  top: 120px;
+
+  // h3 {
+  //   padding-left: 5%;
+  // }
+}
+
+.index-user {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 2px 1px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+
+  :hover {
+    background-color: aqua;
+  }
+
+  a {
+    width: 50%;
+    text-decoration: none;
+    padding-left: 5%;
+  }
+
+  h5 {
+    padding-right: 5%;
+  }
+}
