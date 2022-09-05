@@ -1,19 +1,19 @@
 <div class="container main-container">
-  <div class="row">
-    <div class="col-6">
+  <div class="row justify-content-center">
+    <div class="col-12">
       <h1><%= @user.name %></h1>
 
-  <%=   link_to 'New Task', new_user_task_path(@user) %>
-  <p><strong>Tasks</strong></p>
-  <ul class="tasks-list">
-    <% @user.tasks.each do |task| %>
-      <li class="list-group-item">
-        <%= task.name %>
-        <%= task.status %>
-      </li>
-    <% end %>
-  </ul>
-  <br>
+      <%=   link_to 'New Task', new_user_task_path(@user) %>
+      <p><strong>Tasks</strong></p>
+      <div class="tasks-list">
+        <% @user.tasks.each do |task| %>
+          <ul class="list-group-item">
+            <h5><%= task.name %></h5>
+            <h6><%= task.status %></h6>
+          </ul>
+        <% end %>
+      </div>
+      <br>
 
       <% if current_user.id == @user.id %>
         <%= link_to 'Edit Profile', edit_user_path(current_user, class: 'btn btn-primary') %>
