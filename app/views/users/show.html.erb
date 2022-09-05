@@ -3,6 +3,18 @@
     <div class="col-6">
       <h1><%= @user.name %></h1>
 
+  <%=   link_to 'New Task', new_user_task_path %>
+  <p><strong>Tasks</strong></p>
+  <ul class="tasks-list">
+    <% @user.tasks.each do |task| %>
+      <li class="list-group-item">
+        <%= task.name %>
+        <%= task.status %>
+      </li>
+    <% end %>
+  </ul>
+  <br>
+
       <% if current_user.id == @user.id %>
         <%= link_to 'Edit Profile', edit_user_path(current_user, class: 'btn btn-primary') %>
       <% end %>
