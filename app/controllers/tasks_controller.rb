@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: %i[new create]
+  before_action :set_user, only: %i[new create]
 
   def index
     @tasks = Task.all
@@ -23,8 +23,8 @@ class TasksController < ApplicationController
 
   private
 
-  def set_task
-    @task = Task.find(params[:user_id])
+  def set_user
+    @user = User.find(params[:user_id])
   end
 
   def task_params
