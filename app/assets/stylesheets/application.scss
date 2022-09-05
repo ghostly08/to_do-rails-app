@@ -4,6 +4,15 @@
 // ::::::::: Components ::::::::::
 @import 'components/index';
 
+// ::::::::: config :::::::::::::::
+@import 'config/fonts';
+@import 'config/colors';
 
 // ::::::::: pages :::::::::::::::
-@import 'pages/home';
+@import 'pages/index-user';
+
+
+* {
+  font-family: $main-font;
+  color: $text-color;
+}

@@ -1,12 +1,14 @@
 <div class="container main-container">
-  <div class="row">
-    <div class="col-6">
-      <% @users.each do |user| %>
-        <%= link_to user_path(user) do %>
-          <h3><%= user.name %></h3>
+  <div class="row justify-content-center">
+    <div class="col-12">
+        <% @users.each do |user| %>
+          <div class="index-user">
+            <%= link_to user_path(user) do %>
+              <h3><%= user.name %></h3>
+            <% end %>
+            <h5><%= user.tasks.count %></h5>
+          </div>
         <% end %>
-        <h5><%= user.tasks.count %></h5>
-      <% end %>
     </div>
   </div>
 </div>
