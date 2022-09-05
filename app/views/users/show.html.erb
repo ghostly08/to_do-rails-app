@@ -3,7 +3,7 @@
     <div class="col-6">
       <h1><%= @user.name %></h1>
 
-  <%=   link_to 'New Task', new_user_task_path %>
+  <%=   link_to 'New Task', new_user_task_path(@user) %>
   <p><strong>Tasks</strong></p>
   <ul class="tasks-list">
     <% @user.tasks.each do |task| %>
