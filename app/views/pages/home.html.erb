@@ -1,6 +1,11 @@
-
-<% @users.each do |user| %>
-  <%= link_to user_path(user) do %>
-    <h3><%= user.name %></h3>
-  <% end %>
-<% end %>
+<div class="container main-container">
+  <div class="row">
+    <div class="col-6">
+      <% @users.each do |user| %>
+        <%= link_to user_path(user) do %>
+          <h3><%= user.name %></h3>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
