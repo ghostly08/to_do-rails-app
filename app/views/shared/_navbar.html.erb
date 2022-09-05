@@ -1,10 +1,17 @@
-<nav>
-  <h2>Task Manager</h2>
-  <% if user_signed_in? %>
-    <h3>Hello, <%= current_user.name %>!</h3>
-    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to 'Login', new_user_session_path %>
-    <%= link_to 'Sign up', new_user_registration_path %>
-  <% end %>
+<nav class="container-flow nav-container">
+  <div class="row">
+    <div class="col-6">
+        <h3>Task Manager</h3>
+    </div>
+    <div class="col-6 d-flex justify-content-end">
+        <% if user_signed_in? %>
+          <h5>Hello, <%= current_user.name %> !</h5>
+          <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to 'Login', new_user_session_path %>
+          <%= link_to 'Sign up', new_user_registration_path %>
+        <% end %>
+      <%# </nav> %>
+    </div>
+  </div>
 </nav>

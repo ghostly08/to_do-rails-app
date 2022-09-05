@@ -1,0 +1,16 @@
+
+.nav-container {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100px;
+  background: eb5e55;
+  box-shadow: 2px 2px 4px;
+
+  h3, h5, a {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    padding: 5%;
+  }
+}
