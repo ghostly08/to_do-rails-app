@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_user, only: %i[new create]
+  before_action :set_user, only: %i[new create destroy]
 
   def index
     @tasks = Task.all
@@ -10,7 +10,6 @@ class TasksController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
     @task = Task.new
   end
 
@@ -19,6 +18,14 @@ class TasksController < ApplicationController
     @task.user = @user
     @task.save
     redirect_to user_path(@user)
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+
+    @task.destroy
+
+    redirect_to user_path(@user), status: :see_other
   end
 
   private
