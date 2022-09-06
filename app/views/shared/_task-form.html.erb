@@ -1,0 +1,5 @@
+<%= simple_form_for [@user, @task] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :status, as: :select, collection: [['0', 'to-do'], ['1', 'doing'], ['2', 'done']], label_method: :second %>
+  <%= f.button :submit %>
+<% end %>
