@@ -1,0 +1,19 @@
+
+.btn-new {
+
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    color: #4b4c4d;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: right;
+    text-decoration: none;
+    background-color: #d2eb7a;
+    padding: 3px 5px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 2px 2px 3px;
+  }
+}

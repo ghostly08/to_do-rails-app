@@ -2,31 +2,30 @@
   <div class="row justify-content-center">
     <div class="col-12">
       <h1><%= @user.name %></h1>
+      <div class="btn-new">
+        <%= link_to 'New Task', new_user_task_path(@user) %>
+      </div>
 
-      <%=   link_to 'New Task', new_user_task_path(@user) %>
-      <p><strong>Tasks</strong></p>
       <div class="tasks-list">
         <% @user.tasks.each do |task| %>
           <ul class="list-group-item">
             <h5><%= task.name %></h5>
-            <h6><%= task.status %></h6>
-            <%= link_to edit_user_task_path(@user, task) do %>
-              <i class="fa-solid fa-pen-to-square"></i>
-            <% end %>
-            <%= link_to user_task_path(@user, task),
-              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, remote: true do %>
-              <i class="fa-solid fa-trash"></i>
-            <% end %>
+            <div class="show-icons">
+              <h6><%= task.status %></h6>
+              <%= link_to edit_user_task_path(@user, task) do %>
+                <i class="fa-solid fa-pen-to-square"></i>
+              <% end %>
+              <%= link_to user_task_path(@user, task),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, remote: true do %>
+                <i class="fa-solid fa-trash"></i>
+              <% end %>
+            </div>
           </ul>
         <% end %>
       </div>
       <br>
 
-      <% if current_user.id == @user.id %>
-        <%= link_to 'Edit Profile', edit_user_path(current_user, class: 'btn btn-primary') %>
-      <% end %>
-
-      <%= link_to 'Go back', root_path %>
+      <%= link_to 'Back to List', root_path %>
     </div>
   </div>
 </div>

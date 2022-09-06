@@ -5,6 +5,7 @@
 @import 'components/index';
 
 // ::::::::: config :::::::::::::::
+// @import "index-config";
 @import 'config/fonts';
 @import 'config/colors';
 
@@ -16,4 +17,14 @@
 * {
   font-family: $main-font;
   color: $font-color;
+
+}
+
+a {
+  color: rgb(232, 74, 95);
+  font-weight: 600;
+
+  &:hover {
+    color: #d2eb7a;
+  }
 }
