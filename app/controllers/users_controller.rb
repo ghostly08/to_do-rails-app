@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:show]
+
   def index
     @users = User.all
   end
@@ -22,6 +23,17 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = current_user
+  end
+
+  def update
+    respond_to do |format|
+      if current_user.update(user_params)
+        format.html { redirect_to current_user, notice: 'You successfully update your profile.'}
+      else
+        format.html { render :edit }
+      end
+    end
   end
 
   private
