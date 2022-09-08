@@ -1,7 +1,20 @@
 <div class="container main-container">
   <div class="row justify-content-center">
     <div class="col-12">
-      <h1><%= @user.name %></h1>
+      <div class="profile-container">
+        <div class="profile-name">
+          <h1><%= @user.name %></h1>
+        </div>
+        <div class="profile-links">
+          <% if current_user.id == @user.id %>
+            <%= link_to 'Edit profile', edit_user_path(current_user) %>
+          <% end %> |
+          <%= link_to "Delete user",
+            user_path(@user),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
+      </div>
+
       <div class="btn-new">
         <%= link_to 'New Task', new_user_task_path(@user) %>
       </div>
@@ -26,16 +39,6 @@
         <% end %>
       </div>
       <br>
-
-      <% if current_user.id == @user.id %>
-        <%= link_to 'Edit profile', edit_user_path(current_user) %>
-      <% end %>
-
-      <%# if current_user.id == @user.id %>
-        <%= link_to "Delete user",
-          user_path(@user),
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-      <%# end %>
 
       <%= link_to 'Back to List', root_path %>
     </div>
