@@ -2,21 +2,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 5px;
   box-shadow: 0 1px 3px;
   border-radius: 7px;
   margin-bottom: 15px;
 
   &:hover {
     background-color: #5b5c5d;
+
+    h5, .fa-solid {
+      color: white;
+    }
+    
   }
 
   h5 {
     margin-left: 5%;
   }
 
-  h5:hover {
+  a:hover {
     color: white;
   }
+
 
   h6 {
     margin-right: 5%;
