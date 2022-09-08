@@ -12,4 +12,12 @@ RSpec.describe Task, type: :model do
 
     expect(task.status).to eq 'To-do'
   end
+
+  it "belongs to a user" do
+    task = Task.new
+    user = User.new
+    user.tasks << task
+    expect(task.user).to be user
+  end
+
 end

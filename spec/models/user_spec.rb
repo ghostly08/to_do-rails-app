@@ -12,4 +12,9 @@ RSpec.describe User, type: :model do
 
     expect(user.email).to eq 'batmans@example.com'
   end
+
+  it "has many tasks" do
+    should respond_to(:tasks)
+  end
+
 end
