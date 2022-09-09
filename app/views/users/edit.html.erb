@@ -1,7 +1,13 @@
-<h1>Edit Profile</h1>
+<div class="container forms-container">
+  <div class="row d-flex justify-content-center">
+    <div class="col-4">
+      <h1>Edit Profile</h1>
 
-<%= simple_form_for @user do |f| %>
-  <%= f.input :name %>
-  <%= f.input :email %>
-  <%= f.button :submit %>
-<% end %>
+      <%= simple_form_for @user do |f| %>
+        <%= f.input :name %>
+        <%= f.input :email %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
