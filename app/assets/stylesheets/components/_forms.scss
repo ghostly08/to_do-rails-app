@@ -1,0 +1,21 @@
+.container.forms-container {
+  position: absolute;
+  top: 150px;
+
+  .col-4 {
+    box-shadow: 0 1px 5px;
+    padding: 16px;
+    border-radius: 15px;
+  }
+
+  .btn {
+    font-weight: 600;
+    color: white;
+    background-color: rgb(232, 74, 95);
+    // box-shadow: 0 1px 3px;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
