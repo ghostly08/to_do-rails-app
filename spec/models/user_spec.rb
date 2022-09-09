@@ -2,15 +2,15 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   it 'return the name for a user' do
-    user = User.create(name: 'Batman S')
+    user = build(:user, name: 'Rita')
 
-    expect(user.name).to eq 'Batman S'
+    expect(user.name).to eq 'Rita'
   end
 
   it 'return the email for a user' do
-    user = User.create(email: 'batmans@example.com')
+    user = build(:user, email: 'rita@example.com')
 
-    expect(user.email).to eq 'batmans@example.com'
+    expect(user.email).to eq 'rita@example.com'
   end
 
   it "has many tasks" do
