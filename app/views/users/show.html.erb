@@ -1,4 +1,4 @@
-<div class="container main-container">
+<div class="container main-container-show">
   <div class="row justify-content-center">
     <div class="col-10">
       <div class="profile-container">
@@ -28,7 +28,7 @@
             <div class="show-icons">
 
                 <h6><%= task.status %></h6>
-              
+
               <% if current_user.id == @user.id %>
                 <%= link_to edit_user_task_path(@user, task) do %>
                   <i class="fa-solid fa-pen-to-square"></i>
