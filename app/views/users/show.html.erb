@@ -15,9 +15,11 @@
         </div>
       </div>
 
-      <div class="btn-new">
-        <%= link_to 'New Task', new_user_task_path(@user) %>
-      </div>
+      <% if current_user.id == @user.id %>
+        <div class="btn-new">
+          <%= link_to 'New Task', new_user_task_path(@user) %>
+        </div>
+      <% end %>
 
       <div class="tasks-list">
         <% @user.tasks.each do |task| %>

@@ -1,3 +1,12 @@
+.main-container {
+  margin-left: 5%;
+}
+
+.tasks-list {
+  position: relative;
+  top: 27px;
+}
+
 .list-group-item {
   display: flex;
   justify-content: space-between;
@@ -13,7 +22,7 @@
     h5, .fa-solid {
       color: white;
     }
-    
+
   }
 
   h5 {
