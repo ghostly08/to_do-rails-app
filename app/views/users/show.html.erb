@@ -24,20 +24,20 @@
       <div class="tasks-list">
         <% @user.tasks.each do |task| %>
           <ul class="list-group-item">
-            <h5><%= task.name %></h5>
+            <%= link_to user_task_path(@user, task) do %>
+              <h5><%= task.name %></h5>
+            <% end %>
             <div class="show-icons">
-              <%# <div id="status"> %>
                 <h6 class="status-color <%=task.status%>"><%= task.status %></h6>
-              <%# </div> %>
-              <% if current_user.id == @user.id %>
-                <%= link_to edit_user_task_path(@user, task) do %>
-                  <i class="fa-solid fa-pen-to-square"></i>
+                <% if current_user.id == @user.id %>
+                  <%= link_to edit_user_task_path(@user, task) do %>
+                    <i class="fa-solid fa-pen-to-square"></i>
+                  <% end %>
+                  <%= link_to user_task_path(@user, task),
+                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, remote: true do %>
+                    <i class="fa-solid fa-trash"></i>
+                  <% end %>
                 <% end %>
-                <%= link_to user_task_path(@user, task),
-                  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, remote: true do %>
-                  <i class="fa-solid fa-trash"></i>
-                <% end %>
-              <% end %>
             </div>
           </ul>
         <% end %>
