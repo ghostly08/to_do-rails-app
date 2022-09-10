@@ -3,7 +3,7 @@
 
   h6 {
     font-size: 10px;
-    color: white;
+    font-weight: 700;
     padding: 5px 5px;
     border-radius: 27%;
   }
@@ -17,6 +17,14 @@
   }
 }
 
-.status-color {
+.status-color.done {
+  background-color: #c8ea4a;
+}
+.status-color.doing {
+  color: white;
+  background-color: #ea974a;
+}
+.status-color.to-do {
+  color: white;
   background-color: rgb(232, 74, 95);
 }

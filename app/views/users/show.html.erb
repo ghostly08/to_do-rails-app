@@ -26,9 +26,9 @@
           <ul class="list-group-item">
             <h5><%= task.name %></h5>
             <div class="show-icons">
-              <div id="status">
-                <h6 class="status-color"><%= task.status %></h6>
-              </div>
+              <%# <div id="status"> %>
+                <h6 class="status-color <%=task.status%>"><%= task.status %></h6>
+              <%# </div> %>
               <% if current_user.id == @user.id %>
                 <%= link_to edit_user_task_path(@user, task) do %>
                   <i class="fa-solid fa-pen-to-square"></i>
