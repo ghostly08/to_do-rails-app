@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :task do
-    name {'code'}
-    status {'doing'}
+    sequence(:name) { |n| "Name#{n}" }
+    sequence(:status) { |n| "Status#{n}" }
   end
 end
